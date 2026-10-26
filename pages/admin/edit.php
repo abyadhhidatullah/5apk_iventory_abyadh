@@ -1,0 +1,1 @@
+<?php require_once __DIR__.'/../../tools/cek_login.php'; wajibLogin(); $page=$_GET['page']??'barang'; header('Location: ../../index.php?page='.urlencode($page).'&edit='.(int)($_GET['id']??0)); exit; ?>

@@ -1,0 +1,12 @@
+IVENTORI — PAKET PROFESIONAL PHP NATIVE + MYSQL
+
+1. Ekstrak folder IVENTORI-Pink-Modular ke C:\laragon\www\ atau C:\xampp\htdocs\.
+2. Jalankan Apache dan MySQL.
+3. Pastikan database iventory dan enam tabelnya tersedia: barang, barangmasuk, kategori, merek, penyuplai, user.
+4. Buka Database/perbaikan_password.sql di phpMyAdmin, pilih database iventory, lalu jalankan SQL tersebut. Ini memperbesar kolom password dari VARCHAR(30) ke VARCHAR(255) tanpa menghapus akun.
+5. Periksa config/koneksi.php. Pengaturan bawaan Laragon/XAMPP biasanya host localhost, user root, password kosong, port 3306.
+6. Buka http://localhost/IVENTORI-Pink-Modular/.
+7. Login dengan username/password yang sudah ada di tabel user. Jika password lama berupa teks biasa, sistem akan menerimanya lalu mengubahnya menjadi hash setelah kolom diperbesar.
+
+Jika login masih ditolak, pastikan username dan password memang benar. Aplikasi tidak membuat password akun secara otomatis.
+Jangan membuat reset password publik dan jangan membagikan file konfigurasi database.

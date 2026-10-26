@@ -1,0 +1,84 @@
+mysql> show tables;
++--------------------+
+| Tables_in_iventory |
++--------------------+
+| barang             |
+| barangmasuk        |
+| kategori           |
+| merek              |
+| penyuplai          |
+| user               |
++--------------------+
+6 rows in set (0.06 sec)
+
+mysql> desc barang;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| idbarang    | int          | NO   | PRI | NULL    | auto_increment |
+| kodebarang  | varchar(20)  | NO   |     | NULL    |                |
+| namabarang  | varchar(100) | NO   |     | NULL    |                |
+| idkategori  | int          | NO   | MUL | NULL    |                |
+| idpenyuplai | int          | NO   | MUL | NULL    |                |
+| idmerek     | int          | NO   | MUL | NULL    |                |
+| stok        | int          | NO   |     | NULL    |                |
+| satuan      | varchar(20)  | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+8 rows in set (0.03 sec)
+
+mysql> desc barangmasuk;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| idbarangmasuk | int          | NO   | PRI | NULL    | auto_increment |
+| idbarang      | int          | NO   | MUL | NULL    |                |
+| iduser        | int          | NO   | MUL | NULL    |                |
+| tanggalmasuk  | date         | NO   |     | NULL    |                |
+| jumlah        | int          | NO   |     | NULL    |                |
+| keterangan    | varchar(100) | NO   |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+
+mysql> desc kategori;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| idkategori   | int         | NO   | PRI | NULL    | auto_increment |
+| namakategori | varchar(30) | NO   |     | NULL    |                |
+| keterangan   | varchar(50) | NO   |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> desc merek;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idmerek    | int          | NO   | PRI | NULL    | auto_increment |
+| namamerek  | varchar(50)  | NO   |     | NULL    |                |
+| keterangan | varchar(100) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> desc penyuplai;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| idpenyuplai   | int         | NO   | PRI | NULL    | auto_increment |
+| namapenyuplai | varchar(50) | NO   |     | NULL    |                |
+| nohp          | varchar(50) | NO   |     | NULL    |                |
+| alamat        | varchar(50) | NO   |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc user;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| iduser   | int         | NO   | PRI | NULL    | auto_increment |
+| namauser | varchar(30) | NO   |     | NULL    |                |
+| username | varchar(50) | NO   |     | NULL    |                |
+| password | varchar(30) | NO   |     | NULL    |                |
+| nohp     | varchar(30) | NO   |     | NULL    |                |
+| Alamat   | varchar(30) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
